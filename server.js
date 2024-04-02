@@ -4,18 +4,20 @@ const colors = require("./colors.json");
 const port = process.env.PORT || 3000;
 // Custom CORS middleware
 const allowCors = (req, res, next) => {
-  const allowedOrigins = ['http://127.0.0.1:5500', 'https://color-verse.onrender.com/'];
+  const allowedOrigins = [
+    "http://127.0.0.1:5500",
+    "https://color-verse.onrender.com/",
+    "https://color-verse.netlify.app/"
+  ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader("Access-Control-Allow-Origin", origin);
   }
   next();
 };
 
 // Apply the middleware to all routes
 server.use(allowCors);
-
-
 
 server.listen(port, () => {
   console.log(`App running on Port: ${port}`);
