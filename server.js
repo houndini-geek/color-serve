@@ -11,7 +11,7 @@ server.listen(port, () => {
 });
 
 //GETS ALL COLORS
-server.get("api/colors", (req, res) => {
+server.get("/api/colors", (req, res) => {
   res.status(200).json({
     status: 200,
     statusText: "OK",
