@@ -75,7 +75,7 @@ server.get("/api/hex/:hex", (req, res) => {
 });
 
 //FIND COLORS BY THEME
-server.get("/api/theme/:theme", (req, res) => {
+server.get("/api/themes/:theme", (req, res) => {
   const theme = req.params.theme.toLocaleLowerCase();
 
   const findTheme = colors.filter(
@@ -102,7 +102,7 @@ server.get("/api/theme/:theme", (req, res) => {
 });
 
 //FIND COLORS BY GROUP
-server.get("/api/group/:group", (req, res) => {
+server.get("/api/groups/:group", (req, res) => {
   const group = req.params.group.toLocaleLowerCase();
 
   const findGroups = colors.filter(
