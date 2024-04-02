@@ -1034,5 +1034,33 @@
 		"group": "Green",
 		"hex": "9acd32",
 		"rgb": "154,205,50"
+	},
+	{
+		"name": "AppleGreen",
+		"theme": "light",
+		"group": "Green",
+		"hex": "8DB600",
+		"rgb": "141, 182, 0"
+	},
+	{
+		"name": "Avocado",
+		"theme": "dark",
+		"group": "Green",
+		"hex": "568203",
+		"rgb": "86, 130, 3"
+	},
+	{
+		"name": "BrightGreen",
+		"theme": "light",
+		"group": "Green",
+		"hex": "66FF00",
+		"rgb": "102, 255, 0"
+	},
+	{
+		"name": "British racing green",
+		"theme": "light",
+		"group": "Green",
+		"hex": "004225",
+		"rgb": "0, 66, 37"
 	}
 ]
