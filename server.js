@@ -28,7 +28,7 @@ server.get("/api/colors", (req, res) => {
     statusText: "OK",
     message: "All css colors retrieved.",
     count: colors.length,
-    colors: colors,
+    data: colors,
   });
 });
 
@@ -45,7 +45,7 @@ server.get("/api/name/:name", (req, res) => {
         status: 200,
         statusText: "OK",
         message: `Retrieved single color for ${colorName}`,
-        color: findName,
+        data: findName,
       })
     : res.status(404).json({
         status: 404,
@@ -72,7 +72,7 @@ server.get("/api/hex/:hex", (req, res) => {
         status: 200,
         statusText: "OK",
         message: "Retrieved HEX color",
-        color: findHex,
+        data: findHex,
       })
     : res.status(404).send({
         status: 404,
@@ -99,7 +99,7 @@ server.get("/api/themes/:theme", (req, res) => {
         statusText: "OK",
         message: `All ${theme} themes retrieved`,
         count: findTheme.length,
-        themes: findTheme,
+        data: findTheme,
       })
     : res.status(404).send({
         status: 404,
@@ -126,7 +126,7 @@ server.get("/api/groups/:group", (req, res) => {
         statusText: "OK",
         message: `All ${group} groups retrived`,
         count: findGroups.length,
-        groups: findGroups,
+        data: findGroups,
       })
     : res.status(404).send({
         status: 404,
