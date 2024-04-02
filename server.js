@@ -5,7 +5,7 @@ const colors = require("./colors.json");
 const port = process.env.PORT || 3000;
 
 
-const allowedOrigins = ['http://127.0.0.1:5500/','https://color-verse.onrender.com/']
+const allowedOrigins = ['http://127.0.0.1:5500/','https://color-verse.onrender.com/api/colors']
 const corsOptions = {
   origin: allowedOrigins
 }
