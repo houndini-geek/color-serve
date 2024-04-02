@@ -11,7 +11,7 @@ server.listen(port, () => {
 });
 
 //GETS ALL COLORS
-server.get("/color-verse/api/colors", (req, res) => {
+server.get("api/colors", (req, res) => {
   res.status(200).json({
     status: 200,
     statusText: "OK",
@@ -22,7 +22,7 @@ server.get("/color-verse/api/colors", (req, res) => {
 });
 
 //FIND COLOR BY NAME
-server.get("/color-verse/api/name/:name", (req, res) => {
+server.get("api/name/:name", (req, res) => {
   const colorName = req.params.name.toLocaleLowerCase();
 
   const findName = colors.find(
@@ -49,7 +49,7 @@ server.get("/color-verse/api/name/:name", (req, res) => {
 });
 
 //FIND COLOR BY HEX
-server.get("/color-verse/api/hex/:hex", (req, res) => {
+server.get("/api/hex/:hex", (req, res) => {
   const colorHex = req.params.hex.toLocaleLowerCase();
 
   const findHex = colors.find(
@@ -75,7 +75,7 @@ server.get("/color-verse/api/hex/:hex", (req, res) => {
 });
 
 //FIND COLORS BY THEME
-server.get("/color-verse/api/theme/:theme", (req, res) => {
+server.get("/api/theme/:theme", (req, res) => {
   const theme = req.params.theme.toLocaleLowerCase();
 
   const findTheme = colors.filter(
@@ -102,7 +102,7 @@ server.get("/color-verse/api/theme/:theme", (req, res) => {
 });
 
 //FIND COLORS BY GROUP
-server.get("/color-verse/api/group/:group", (req, res) => {
+server.get("/api/group/:group", (req, res) => {
   const group = req.params.group.toLocaleLowerCase();
 
   const findGroups = colors.filter(
