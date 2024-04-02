@@ -1,16 +1,16 @@
 const express = require("express");
 const server = express();
-const cors = require("cors");
 const colors = require("./colors.json");
 const port = process.env.PORT || 3000;
 
-
-const allowedOrigins = ['http://127.0.0.1:5500/', 'https://color-verse.onrender.com/'];
-
-const corsOptions = {
-  origin: allowedOrigins
+// Custom CORS middleware
+const allowCors = (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://color-verse.onrender.com/');
+  next();
 };
-server.use(cors(corsOptions));
+
+// Apply the middleware to all routes
+server.use(allowCors);
 
 
 server.listen(port, () => {
@@ -29,7 +29,7 @@ server.get("/api/colors", (req, res) => {
 });
 
 //FIND COLOR BY NAME
-server.get("api/name/:name", (req, res) => {
+server.get("/api/name/:name", (req, res) => {
   const colorName = req.params.name.toLocaleLowerCase();
 
   const findName = colors.find(
