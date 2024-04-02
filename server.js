@@ -4,7 +4,12 @@ const cors = require("cors");
 const colors = require("./colors.json");
 const port = process.env.PORT || 3000;
 
-server.use(cors());
+
+const allowedOrigins = ['http://127.0.0.1:5500/']
+const corsOptions = {
+  origin: allowedOrigins
+}
+server.use('/', cors(corsOptions));
 
 server.listen(port, () => {
   console.log(`App running on Port: ${port}`);
