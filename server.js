@@ -6,6 +6,7 @@ const port = process.env.PORT || 3000;
 const allowCors = (req, res, next) => {
   const allowedOrigins = [
     "http://127.0.0.1:5500",
+    "http://localhost:5173",
     "https://color-verse.onrender.com/",
     "https://thehuehub.netlify.app"
   ];
@@ -23,8 +24,11 @@ server.listen(port, () => {
   console.log(`App running on Port: ${port}`);
 });
 
+
 //GETS ALL COLORS
-server.get("/api/colors", (req, res) => {
+server.get("/api/colors/",(req, res) => {
+ 
+
   res.status(200).json({
     status: 200,
     statusText: "OK",
@@ -140,6 +144,7 @@ server.get("/api/groups/:group", (req, res) => {
         },
       });
 });
+
 
 server.use(function (req, res) {
   res.status(404).json({
