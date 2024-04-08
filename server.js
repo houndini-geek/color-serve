@@ -8,7 +8,8 @@ const allowCors = (req, res, next) => {
     "http://127.0.0.1:5500",
     "http://localhost:5173",
     "https://color-verse.onrender.com/",
-    "https://thehuehub.netlify.app"
+    "https://thehuehub.netlify.app",
+    "https://huehub.onrender.com"
   ];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
